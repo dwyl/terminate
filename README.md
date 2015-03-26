@@ -1,5 +1,5 @@
 # terminate
-Terminate a Node.js Child Process based on the Process ID
+Terminate a Node.js Process based on the Process ID
 
 ![terminate-the-node-process-final](https://cloud.githubusercontent.com/assets/194400/6859420/a3b63f3c-d410-11e4-91bb-ad6b607cc465.png)
 
@@ -7,7 +7,7 @@ Terminate a Node.js Child Process based on the Process ID
 
 
  <br />
- 
+
 ## Background / Motivation
 
 While building the [***Faster***](https://github.com/ideaq/faster)
