@@ -8,10 +8,10 @@ A reliable (tested) way to **Terminate** a **Node.js Process** (and ***all Child
 [![Code Climate](https://codeclimate.com/github/nelsonic/terminate/badges/gpa.svg)](https://codeclimate.com/github/nelsonic/terminate)
 [![Test Coverage](https://codeclimate.com/github/nelsonic/terminate/badges/coverage.svg)](https://codeclimate.com/github/nelsonic/terminate)
 [![npm version](https://badge.fury.io/js/terminate.svg)](http://badge.fury.io/js/terminate)
-[![Node.js Version][node-version-image]][node-version-url]
+[![Node.js Version](https://img.shields.io/node/v/terminate.svg?style=flat)](http://nodejs.org/download)
 [![Dependency Status](https://david-dm.org/nelsonic/terminate.svg)](https://david-dm.org/nelsonic/terminate)
-[node-version-image]: https://img.shields.io/node/v/listdirs.svg?style=flat
-[node-version-url]: http://nodejs.org/download/
+
+
 
 ## Usage
 
