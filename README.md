@@ -1,5 +1,6 @@
 # terminate
-Terminate a Node.js Process based on the Process ID
+
+A reliable (tested) way to **Terminate** a **Node.js Process** (and ***all Child Processes***) based on the **Process ID**
 
 ![terminate-the-node-process-final](https://cloud.githubusercontent.com/assets/194400/6859420/a3b63f3c-d410-11e4-91bb-ad6b607cc465.png)
 
@@ -38,6 +39,14 @@ terminate(process.pid, function(err, done){
  <br />
 
 # tl;dr
+
+## Why?
+
+In our [***Faster***](https://github.com/ideaq/faster) project
+we run the server using a child process.
+When we want to re-start the server,  
+we needed to ensure the **process** (and any **Child Processes**)
+were **Terminate**ed before re-start.
 
 ## Research
 
