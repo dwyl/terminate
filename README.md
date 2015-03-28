@@ -12,6 +12,27 @@ Terminate a Node.js Process based on the Process ID
 [node-version-image]: https://img.shields.io/node/v/listdirs.svg?style=flat
 [node-version-url]: http://nodejs.org/download/
 
+## Usage
+
+### Install from NPM
+
+```sh
+npm install terminate --save
+```
+
+### In your script
+
+```js
+var terminate = require('terminate');
+terminate(process.pid, function(err, done){
+  if(err) { // you will get an error if you did not supply a valid process.pid
+   console.log("Oopsy: " + err); // handle errors in your preferred way.
+ }
+ else {
+   console.log(done); // do what you do best!
+ }
+})
+```
 
 
  <br />
