@@ -3,6 +3,14 @@ Terminate a Node.js Process based on the Process ID
 
 ![terminate-the-node-process-final](https://cloud.githubusercontent.com/assets/194400/6859420/a3b63f3c-d410-11e4-91bb-ad6b607cc465.png)
 
+[![Build Status](https://travis-ci.org/nelsonic/terminate.svg)](https://travis-ci.org/nelsonic/terminate)
+[![Code Climate](https://codeclimate.com/github/nelsonic/terminate/badges/gpa.svg)](https://codeclimate.com/github/nelsonic/terminate)
+[![Test Coverage](https://codeclimate.com/github/nelsonic/terminate/badges/coverage.svg)](https://codeclimate.com/github/nelsonic/terminate)
+[![npm version](https://badge.fury.io/js/terminate.svg)](http://badge.fury.io/js/terminate)
+[![Node.js Version][node-version-image]][node-version-url]
+[![Dependency Status](https://david-dm.org/nelsonic/terminate.svg)](https://david-dm.org/nelsonic/terminate)
+[node-version-image]: https://img.shields.io/node/v/listdirs.svg?style=flat
+[node-version-url]: http://nodejs.org/download/
 
 
 
@@ -36,13 +44,13 @@ As a result, we need to be able to kill those processes in order to re-start the
 
 ### Why not use an *Existing* Module?
 
-We investigated using **ps-tree**: https://github.com/indexzero/ps-tree/
+We investigated using **terminate**: https://github.com/indexzero/terminate/
 it was *un-maintained* and had *no tests*
-  so we submitted an [***issue***](https://github.com/indexzero/ps-tree/issues/10)
+  so we submitted an [***issue***](https://github.com/indexzero/terminate/issues/10)
   offering to update the module *with tests*.  
-  [*Charlie*](https://github.com/indexzero/ps-tree/issues/10#issuecomment-86795133)
+  [*Charlie*](https://github.com/indexzero/terminate/issues/10#issuecomment-86795133)
   replied welcoming an update so we submitted
-  a [***Pull Request***](https://github.com/indexzero/ps-tree/pull/12)
+  a [***Pull Request***](https://github.com/indexzero/terminate/pull/12)
   with ***100% test coverage***
 
 Other potential modules:
