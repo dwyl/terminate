@@ -27,12 +27,12 @@ npm install terminate --save
 var terminate = require('terminate');
 terminate(process.pid, function(err, done){
   if(err) { // you will get an error if you did not supply a valid process.pid
-   console.log("Oopsy: " + err); // handle errors in your preferred way.
- }
- else {
-   console.log(done); // do what you do best!
- }
-})
+    console.log("Oopsy: " + err); // handle errors in your preferred way.
+  }
+  else {
+    console.log(done); // do what you do best!
+  }
+});
 ```
 
 
@@ -53,7 +53,7 @@ were **Terminate**d before attempting to re-start.
 ## *Prevents* Zombie Processes
 
 Imagine you are running your Node.js app on a Multi-Core Processor
-and don't want to "waste" the CPU by only using a *one* of those cores  
+and don't want to "waste" the CPU by only using *one* of those cores  
 (remember: one of Node's *selling points* is that its [single-process running on a single-core](http://stackoverflow.com/questions/17959663/)),
 you can "farm out" tasks to the other cores using [**Child Process**](https://nodejs.org/api/child_process.html)(es)
 
