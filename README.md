@@ -80,7 +80,7 @@ it was *un-maintained* and had *no tests*
   [*Charlie*](https://github.com/indexzero/terminate/issues/10#issuecomment-86795133)
   replied welcoming an update so we submitted
   a [***Pull Request***](https://github.com/indexzero/ps-tree/pull/12)
-  with ***100% test coverage*** [***Merged by *Charlie* on ]  
+  with ***100% test coverage*** which was [***Merged*** by *Charlie*](https://github.com/indexzero/ps-tree/pull/12#issuecomment-91785753)  
 ps-tree in turn uses [**event-stream**](https://github.com/dominictarr/event-stream)
 (by [Dominc Tarr](https://github.com/dominictarr)) for streaming the result
 of its process lookups.  
