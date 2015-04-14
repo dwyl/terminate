@@ -66,6 +66,8 @@ which you would have to either *manually* kill or restart the machine/VM to clea
 Instead you need to *find* all the Process IDs for the child processes
 that your app created and **terminate** those *before* you can re-start your app.
 
+Using ***terminate*** you no longer have this problem.
+
 <br />
 
 ## Dependencies [![Dependency Status](https://david-dm.org/nelsonic/terminate.svg)](https://david-dm.org/nelsonic/terminate) [![devDependency Status](https://david-dm.org/nelsonic/terminate/dev-status.svg)](https://david-dm.org/nelsonic/terminate#info=devDependencies) [![Retire Status](https://img.shields.io/badge/security-no%20known%20vulnerabilities-brightgreen.svg)](http://retire.insecurity.today/api/image?uri=https://raw.githubusercontent.com/nelsonic/terminate/master/package.json)
@@ -77,8 +79,8 @@ it was *un-maintained* and had *no tests*
   offering to update the module *with tests*.  
   [*Charlie*](https://github.com/indexzero/terminate/issues/10#issuecomment-86795133)
   replied welcoming an update so we submitted
-  a [***Pull Request***](https://github.com/indexzero/terminate/pull/12)
-  with ***100% test coverage***.  
+  a [***Pull Request***](https://github.com/indexzero/ps-tree/pull/12)
+  with ***100% test coverage*** [***Merged by *Charlie* on ]  
 ps-tree in turn uses [**event-stream**](https://github.com/dominictarr/event-stream)
 (by [Dominc Tarr](https://github.com/dominictarr)) for streaming the result
 of its process lookups.  
