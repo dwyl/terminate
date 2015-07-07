@@ -16,15 +16,15 @@ module.exports = function terminate(pid, callback) {
   if(!pid) {
     throw new Error("No pid supplied to Terminate!")
   }
-  var signal = 'SIGKILL';
   psTree(pid, function (err, children) {
-    console.log("Children:", children.length);
+    if(err) {
+      return callback(err, false);
+    }
+
     cp.spawn('kill', ['-9'].concat(children.map(function (p) { return p.PID })))
       .on('exit', function() {
         if(callback && typeof callback === 'function') {
-          callback(err, true);
-        } else { // do nothing
-          console.log(children.length + " Processes Terminated!");
+          callback(null, true);
         }
       });
   });
