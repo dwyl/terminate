@@ -4,12 +4,12 @@ A minimalist yet *reliable* (tested) way to **Terminate** a **Node.js Process** 
 
 ![terminate-the-node-process-final](https://cloud.githubusercontent.com/assets/194400/6859420/a3b63f3c-d410-11e4-91bb-ad6b607cc465.png)
 
-[![Build Status](https://travis-ci.org/nelsonic/terminate.svg)](https://travis-ci.org/nelsonic/terminate)
-[![Code Climate](https://codeclimate.com/github/nelsonic/terminate/badges/gpa.svg)](https://codeclimate.com/github/nelsonic/terminate)
-[![Test Coverage](https://codeclimate.com/github/nelsonic/terminate/badges/coverage.svg)](https://codeclimate.com/github/nelsonic/terminate)
+[![Build Status](https://travis-ci.org/dwyl/terminate.svg?branch=master)](https://travis-ci.org/dwyl/terminate)
+[![Code Climate](https://codeclimate.com/github/dwyl/terminate/badges/gpa.svg)](https://codeclimate.com/github/dwyl/terminate)
+[![Test Coverage](https://codeclimate.com/github/dwyl/terminate/badges/coverage.svg)](https://codeclimate.com/github/dwyl/terminate)
 [![npm version](https://badge.fury.io/js/terminate.svg)](http://badge.fury.io/js/terminate)
 [![Node.js Version](https://img.shields.io/node/v/terminate.svg?style=flat)](http://nodejs.org/download)
-[![Dependency Status](https://david-dm.org/nelsonic/terminate.svg)](https://david-dm.org/nelsonic/terminate)
+[![Dependency Status](https://david-dm.org/dwyl/terminate.svg)](https://david-dm.org/dwyl/terminate)
 
 
 
@@ -34,8 +34,6 @@ terminate(process.pid, function(err, done){
   }
 });
 ```
-
-
 
  <br />
 
@@ -70,7 +68,7 @@ Using ***terminate*** you no longer have this problem.
 
 <br />
 
-## Dependencies [![Dependency Status](https://david-dm.org/nelsonic/terminate.svg)](https://david-dm.org/nelsonic/terminate) [![devDependency Status](https://david-dm.org/nelsonic/terminate/dev-status.svg)](https://david-dm.org/nelsonic/terminate#info=devDependencies) [![Retire Status](https://img.shields.io/badge/security-no%20known%20vulnerabilities-brightgreen.svg)](http://retire.insecurity.today/api/image?uri=https://raw.githubusercontent.com/nelsonic/terminate/master/package.json)
+## Dependencies [![Dependency Status](https://david-dm.org/dwyl/terminate.svg)](https://david-dm.org/dwyl/terminate) [![devDependency Status](https://david-dm.org/dwyl/terminate/dev-status.svg)](https://david-dm.org/dwyl/terminate#info=devDependencies) [![Retire Status](https://img.shields.io/badge/security-no%20known%20vulnerabilities-brightgreen.svg)](http://retire.insecurity.today/api/image?uri=https://raw.githubusercontent.com/dwyl/terminate/master/package.json)
 
 While researching how to get a list of child processes given a
 Process ID we found **ps-tree**: https://github.com/indexzero/ps-tree  
