@@ -1,6 +1,6 @@
 {
   "name": "terminate",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Terminate a Node.js Process based on the Process ID",
   "main": "terminate.js",
   "scripts": {
@@ -29,17 +29,15 @@
     "ps-tree": "1.0.1"
   },
   "devDependencies": {
-    "chalk": "^1.0.0",
-    "codeclimate-test-reporter": "0.1.0",
-    "istanbul": "^0.3.17",
-    "jshint": "^2.8.0",
-    "pre-commit": "1.0.6",
-    "tape": "^4.0.0"
+    "chalk": "^1.1.1",
+    "istanbul": "^0.4.2",
+    "jshint": "^2.9.1",
+    "pre-commit": "1.1.2",
+    "tape": "^4.4.0"
   },
   "pre-commit": [
     "jshint",
-    "coverage",
-    "codeclimate"
+    "coverage"
   ],
   "engines": {
     "node": ">=0.10"
