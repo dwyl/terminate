@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/dwyl/terminate",
   "dependencies": {
-    "ps-tree": "1.0.1"
+    "ps-tree": "1.0.0"
   },
   "devDependencies": {
     "chalk": "^1.0.0",
