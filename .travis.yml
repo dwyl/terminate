@@ -2,4 +2,8 @@ language: node_js
 node_js:
   - 0.10
   - 0.12
-  - io.js
+  - "4.2.6"
+before_install:
+  - pip install --user codecov
+after_success:
+  - codecov --file coverage/lcov.info --disable search
