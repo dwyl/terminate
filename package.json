@@ -39,6 +39,7 @@
   },
   "pre-commit": [
     "jshint",
+    "coverage",
     "codeclimate"
   ],
   "engines": {
