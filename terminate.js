@@ -16,7 +16,6 @@ module.exports = function terminate(pid, callback) {
   if(!pid) {
     throw new Error("No pid supplied to Terminate!")
   }
-  var signal = 'SIGKILL';
   psTree(pid, function (err, children) {
     cp.spawn('kill', ['-9'].concat(children.map(function (p) { return p.PID })))
     if(callback && typeof callback === 'function') {
