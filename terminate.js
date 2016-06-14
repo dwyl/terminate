@@ -17,12 +17,14 @@ module.exports = function terminate(pid, callback) {
     throw new Error("No pid supplied to Terminate!")
   }
   psTree(pid, function (err, children) {
+    if(err) {
+      return callback(err, false);
+    }
+
     cp.spawn('kill', ['-9'].concat(children.map(function (p) { return p.PID })))
       .on('exit', function() {
         if(callback && typeof callback === 'function') {
-          callback(err, true);
-        } else { // do nothing
-          console.log(children.length + " Processes Terminated!");
+          callback(null, true);
         }
       });
   });
