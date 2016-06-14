@@ -1,17 +1,16 @@
 {
   "name": "terminate",
-  "version": "1.0.5",
+  "version": "1.0.9",
   "description": "Terminate a Node.js Process based on the Process ID",
   "main": "terminate.js",
   "scripts": {
     "test": "istanbul cover ./node_modules/tape/bin/tape ./test/*.js",
     "coverage": "istanbul cover ./node_modules/tape/bin/tape ./test/*.js && istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
-    "jshint": "./node_modules/jshint/bin/jshint -c .jshintrc --exclude-path .gitignore .",
-    "codeclimate": "CODECLIMATE_REPO_TOKEN=cb9cb09b16b317fb2d65ebf34df7039bb62976fe3cb3eadc71b4fd7991033c47 ./node_modules/codeclimate-test-reporter/bin/codeclimate.js < ./coverage/lcov.info"
+    "jshint": "./node_modules/jshint/bin/jshint -c .jshintrc --exclude-path .gitignore ."
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nelsonic/terminate.git"
+    "url": "https://github.com/dwyl/terminate.git"
   },
   "keywords": [
     "Terminate",
@@ -21,26 +20,24 @@
     "Process"
   ],
   "author": "@nelsonic <contact.nelsonic@gmail.com> (https://github.com/nelsonic)",
-  "license": "ISC",
+  "license": "GPL-2.0",
   "bugs": {
-    "url": "https://github.com/nelsonic/terminate/issues"
+    "url": "https://github.com/dwyl/terminate/issues"
   },
-  "homepage": "https://github.com/nelsonic/terminate",
+  "homepage": "https://github.com/dwyl/terminate",
   "dependencies": {
-    "ps-tree": "1.0.0"
+    "ps-tree": "1.0.1"
   },
   "devDependencies": {
-    "chalk": "^1.0.0",
-    "codeclimate-test-reporter": "0.0.4",
-    "istanbul": "^0.3.13",
-    "jshint": "^2.7.0",
-    "pre-commit": "1.0.6",
-    "tape": "^4.0.0"
+    "chalk": "^1.1.1",
+    "istanbul": "^0.4.2",
+    "jshint": "^2.9.1",
+    "pre-commit": "1.1.2",
+    "tape": "^4.4.0"
   },
   "pre-commit": [
     "jshint",
-    "coverage",
-    "codeclimate"
+    "coverage"
   ],
   "engines": {
     "node": ">=0.10"
