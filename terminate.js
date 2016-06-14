@@ -18,10 +18,12 @@ module.exports = function terminate(pid, callback) {
   }
   psTree(pid, function (err, children) {
     cp.spawn('kill', ['-9'].concat(children.map(function (p) { return p.PID })))
-    if(callback && typeof callback === 'function') {
-      callback(err, true);
-    } else { // do nothing
-      console.log(children.length + " Processes Terminated!");
-    }
+      .on('exit', function() {
+        if(callback && typeof callback === 'function') {
+          callback(err, true);
+        } else { // do nothing
+          console.log(children.length + " Processes Terminated!");
+        }
+      });
   });
 };
