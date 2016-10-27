@@ -1,4 +1,5 @@
 var psTree = require('ps-tree'); // see: http://git.io/jBHZ
+var handlePsTreeCallback = require('./handlePsTreeCallback');
 
 /**
  * terminate is an ultra-simple way to kill all the node processes
@@ -16,22 +17,6 @@ module.exports = function terminate(pid, callback) {
     throw new Error("No pid supplied to Terminate!")
   }
   psTree(pid, function (err, children) {
-    // because I don't think it's possible to get psTree to err in the test environment:
-    // istanbul ignore next
-    if (err) {
-      return callback(err);
-    }
-    children.forEach(function (child) {
-      try {
-        process.kill(parseInt(child.PID));
-      } catch (error) {
-        // ignore
-      }
-    });
-    if(callback && typeof callback === 'function') {
-      callback(null, true);
-    } else { // do nothing
-      console.log(children.length + " Processes Terminated!");
-    }
+    handlePsTreeCallback(err, children, callback);
   });
 };
