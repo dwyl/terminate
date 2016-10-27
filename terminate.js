@@ -1,4 +1,3 @@
-var cp = require('child_process');
 var psTree = require('ps-tree'); // see: http://git.io/jBHZ
 
 /**
@@ -17,13 +16,22 @@ module.exports = function terminate(pid, callback) {
     throw new Error("No pid supplied to Terminate!")
   }
   psTree(pid, function (err, children) {
-    cp.spawn('kill', ['-9'].concat(children.map(function (p) { return p.PID })))
-      .on('exit', function() {
-        if(callback && typeof callback === 'function') {
-          callback(err, true);
-        } else { // do nothing
-          console.log(children.length + " Processes Terminated!");
-        }
-      });
+    children.forEach(function (child) {
+      try {
+        process.kill(parseInt(child.PID), 'SIGKILL');
+      } catch (error) {
+        // ignore
+      }
+    });
+    try {
+      process.kill(pid, 'SIGKILL');
+    } catch (error) {
+      // ignore
+    }
+    if(callback && typeof callback === 'function') {
+      callback(err, true);
+    } else { // do nothing
+      console.log(children.length + " Processes Terminated!");
+    }
   });
 };
