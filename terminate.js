@@ -21,8 +21,6 @@ module.exports = function terminate(pid, callback) {
       .on('exit', function() {
         if(callback && typeof callback === 'function') {
           callback(err, true);
-        } else { // do nothing
-          console.log(children.length + " Processes Terminated!");
         }
       });
   });
