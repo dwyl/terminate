@@ -16,6 +16,11 @@ module.exports = function terminate(pid, callback) {
     throw new Error("No pid supplied to Terminate!")
   }
   psTree(pid, function (err, children) {
+    // because I don't think it's possible to get psTree to err in the test environment:
+    // istanbul ignore next
+    if (err) {
+      return callback(err);
+    }
     children.forEach(function (child) {
       try {
         process.kill(parseInt(child.PID));
@@ -24,7 +29,7 @@ module.exports = function terminate(pid, callback) {
       }
     });
     if(callback && typeof callback === 'function') {
-      callback(err, true);
+      callback(null, true);
     } else { // do nothing
       console.log(children.length + " Processes Terminated!");
     }
