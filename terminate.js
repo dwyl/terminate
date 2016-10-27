@@ -18,7 +18,7 @@ module.exports = function terminate(pid, callback) {
   psTree(pid, function (err, children) {
     children.forEach(function (child) {
       try {
-        process.kill(parseInt(child.PID));
+        process.kill(parseInt(child.PID), 'SIGKILL');
       } catch (error) {
         // ignore
       }
