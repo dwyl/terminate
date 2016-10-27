@@ -23,6 +23,11 @@ module.exports = function terminate(pid, callback) {
         // ignore
       }
     });
+    try {
+      process.kill(pid, 'SIGKILL');
+    } catch (error) {
+      // ignore
+    }
     if(callback && typeof callback === 'function') {
       callback(err, true);
     } else { // do nothing
