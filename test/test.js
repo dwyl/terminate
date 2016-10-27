@@ -68,8 +68,14 @@ test(cyan('Terminate a process without providing a callback'), function (t) {
 
 test(cyan('immediately passes along errors from psTree'), function (t) {
   var error = new Error('test');
-  handlePsTreeCallback(error, undefined, function (err) {
+  handlePsTreeCallback(error, undefined, 1, function (err) {
     t.equal(error, err);
     t.end();
   });
+});
+
+test(cyan('handles errors from psTree without callback'), function (t) {
+  var error = new Error('test');
+  handlePsTreeCallback(error, undefined, 1);
+  setTimeout(function () { t.end(); }, 500);
 });

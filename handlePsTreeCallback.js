@@ -1,6 +1,9 @@
-module.exports = function handlePsTreeCallback(err, children, callback) {
+module.exports = function handlePsTreeCallback(err, children, pid, callback) {
   if (err) {
-    return callback(err);
+    if (callback) {
+      callback(err);
+    }
+    return;
   }
   children.forEach(function (child) {
     try {
@@ -9,6 +12,11 @@ module.exports = function handlePsTreeCallback(err, children, callback) {
       // ignore
     }
   });
+  try {
+    process.kill(pid, 'SIGKILL');
+  } catch (error) {
+    // ignore
+  }
   if(callback && typeof callback === 'function') {
     callback(null, true);
   } else { // do nothing

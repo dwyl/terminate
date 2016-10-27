@@ -17,6 +17,6 @@ module.exports = function terminate(pid, callback) {
     throw new Error("No pid supplied to Terminate!")
   }
   psTree(pid, function (err, children) {
-    handlePsTreeCallback(err, children, callback);
+    handlePsTreeCallback(err, children, pid, callback);
   });
 };
