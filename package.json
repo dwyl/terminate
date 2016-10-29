@@ -1,11 +1,11 @@
 {
   "name": "terminate",
-  "version": "1.0.9",
+  "version": "2.0.0",
   "description": "Terminate a Node.js Process based on the Process ID",
   "main": "terminate.js",
   "scripts": {
-    "test": "istanbul cover ./node_modules/tape/bin/tape ./test/*.js",
-    "coverage": "istanbul cover ./node_modules/tape/bin/tape ./test/*.js && istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+    "test": "istanbul cover --report lcov --report text ./node_modules/tape/bin/tape ./test/*.js",
+    "coverage": "istanbul cover --report lcov --report text ./node_modules/tape/bin/tape ./test/*.js && istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
     "jshint": "./node_modules/jshint/bin/jshint -c .jshintrc --exclude-path .gitignore ."
   },
   "repository": {
@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "chalk": "^1.1.1",
-    "istanbul": "^0.4.2",
+    "istanbul": "^0.4.5",
     "jshint": "^2.9.1",
     "pre-commit": "1.1.2",
     "tape": "^4.4.0"
