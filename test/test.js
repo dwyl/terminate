@@ -114,7 +114,7 @@ test(cyan('works when process takes awhile to exit'), function (t) {
 test(cyan('errors when process takes too long to exit'), function (t) {
   var parent = exec(
     "node " + require.resolve('./exec/parent.js'),
-    {env: assign({}, process.env, {KILL_DELAY: '5000'})},
+    {env: assign({}, process.env, {KILL_DELAY: '2500'})},
     function(error, stdout, stderr) {
       if (error) {
         console.log('exec error: ' + error);
@@ -131,14 +131,8 @@ test(cyan('errors when process takes too long to exit'), function (t) {
       setTimeout(function () {
         terminate(parent.pid, 'SIGINT', {timeout: 1000}, function (err) {
           t.assert(err && /^timed out waiting for pids \d+(, \d+)* to exit$/.test(err.message), green("✓ got expected error message"));
+          t.end();
         })
-        setTimeout(function () {
-          psTree(parent.pid, function (err, children) {
-            // console.log("Children: ", children, '\n');
-            t.equal(children.length, 0, green("✓ No more active child processes (we killed them)"));
-            t.end();
-          })
-        }, 1500); // give psTree time to kill the processes
       }, 10); // give the child process time to spawn
     });
   },200); // give the child process time to spawn
