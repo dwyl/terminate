@@ -111,61 +111,63 @@ test(cyan('works when process takes awhile to exit'), function (t) {
   },200); // give the child process time to spawn
 });
 
-test(cyan('errors when process takes too long to exit'), function (t) {
-  var parent = exec(
-    "node " + require.resolve('./exec/parent.js'),
-    {env: assign({}, process.env, {KILL_DELAY: '2500'})},
-    function(error, stdout, stderr) {
+if (process.platform !== 'win32') {
+  test(cyan('errors when process takes too long to exit'), function (t) {
+    var parent = exec(
+      "node " + require.resolve('./exec/parent.js'),
+      {env: assign({}, process.env, {KILL_DELAY: '2500'})},
+      function (error, stdout, stderr) {
+        if (error) {
+          console.log('exec error: ' + error);
+        }
+      }
+    )
+    setTimeout(function () {
+      console.log(cyan("Parent:" + parent.pid));
+      // list all the child processes
+      psTree(parent.pid, function (err, children) {
+        // console.log(red(err));
+        console.log(cyan("Children: "), children)
+        t.true(children.length > 0, green("✓ There are " + children.length + " active child processes"));
+        setTimeout(function () {
+          terminate(parent.pid, 'SIGINT', {timeout: 1000}, function (err) {
+            t.assert(err && /^timed out waiting for pids \d+(, \d+)* to exit$/.test(err.message), green("✓ got expected error message"));
+            t.end();
+          })
+        }, 10); // give the child process time to spawn
+      });
+    }, 200); // give the child process time to spawn
+  });
+
+  test(cyan('sends signal user passed'), function (t) {
+    var parent = exec("node " + require.resolve('./exec/parent.js'), function (error, stdout, stderr) {
+      t.assert(/^parent got SIGINT$/m.test(stdout), green("✓ parent reported getting SIGINT"));
       if (error) {
         console.log('exec error: ' + error);
       }
-    }
-  )
-  setTimeout(function() {
-    console.log(cyan("Parent:"+parent.pid));
-    // list all the child processes
-    psTree(parent.pid, function(err, children) {
-      // console.log(red(err));
-      console.log(cyan("Children: "), children)
-      t.true(children.length > 0, green("✓ There are " + children.length + " active child processes"));
-      setTimeout(function () {
-        terminate(parent.pid, 'SIGINT', {timeout: 1000}, function (err) {
-          t.assert(err && /^timed out waiting for pids \d+(, \d+)* to exit$/.test(err.message), green("✓ got expected error message"));
-          t.end();
-        })
-      }, 10); // give the child process time to spawn
-    });
-  },200); // give the child process time to spawn
-});
-
-test(cyan('sends signal user passed'), function (t) {
-  var parent = exec("node " + require.resolve('./exec/parent.js'), function(error, stdout, stderr) {
-    t.assert(/^parent got SIGINT$/m.test(stdout), green("✓ parent reported getting SIGINT"));
-    if (error) {
-      console.log('exec error: ' + error);
-    }
-  })
-  setTimeout(function() {
-    console.log(cyan("Parent:"+parent.pid));
-    // list all the child processes
-    psTree(parent.pid, function(err, children) {
-      console.log(cyan("Children: "), children)
-      t.true(children.length > 0, green("✓ There are " + children.length + " active child processes"));
-      setTimeout(function () {
-        terminate(parent.pid, 'SIGINT', function (err) {
-          t.equal(err, null, green("✓ No Errors"))
-        })
+    })
+    setTimeout(function () {
+      console.log(cyan("Parent:" + parent.pid));
+      // list all the child processes
+      psTree(parent.pid, function (err, children) {
+        console.log(cyan("Children: "), children)
+        t.true(children.length > 0, green("✓ There are " + children.length + " active child processes"));
         setTimeout(function () {
-          psTree(parent.pid, function (err, children) {
-            // console.log("Children: ", children, '\n');
-            t.equal(children.length, 0, green("✓ No more active child processes (we killed them)"));
-            t.end();
+          terminate(parent.pid, 'SIGINT', function (err) {
+            t.equal(err, null, green("✓ No Errors"))
           })
-        }, 200); // give psTree time to kill the processes
-      }, 10); // give the child process time to spawn
-    });
-  },200); // give the child process time to spawn
-});
+          setTimeout(function () {
+            psTree(parent.pid, function (err, children) {
+              // console.log("Children: ", children, '\n');
+              t.equal(children.length, 0, green("✓ No more active child processes (we killed them)"));
+              t.end();
+            })
+          }, 200); // give psTree time to kill the processes
+        }, 10); // give the child process time to spawn
+      });
+    }, 200); // give the child process time to spawn
+  });
+}
 
 test(cyan('Attempt to terminate without providing a Parent Process ID'), function (t) {
   var errmsg = "Error: No pid supplied to Terminate!"
