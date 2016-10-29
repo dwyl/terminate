@@ -5,6 +5,7 @@ var psTree = require('ps-tree');  // see: http://git.io/jBHZ
 var exec = require('child_process').exec;
 
 var terminate = require('../terminate');
+var handlePsTreeCallback = require('../handlePsTreeCallback')
 
 test(cyan('Spawn a Parent process which has a few Child Processes'), function (t) {
   var parent = exec("node ./test/exec/parent.js", function(error, stdout, stderr) {
@@ -63,4 +64,18 @@ test(cyan('Terminate a process without providing a callback'), function (t) {
       });
     },1000); // give psTree time to kill the processes
   },200); // give the child process time to spawn
+});
+
+test(cyan('immediately passes along errors from psTree'), function (t) {
+  var error = new Error('test');
+  handlePsTreeCallback(error, undefined, 1, function (err) {
+    t.equal(error, err);
+    t.end();
+  });
+});
+
+test(cyan('handles errors from psTree without callback'), function (t) {
+  var error = new Error('test');
+  handlePsTreeCallback(error, undefined, 1);
+  setTimeout(function () { t.end(); }, 500);
 });
