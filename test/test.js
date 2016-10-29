@@ -7,6 +7,18 @@ var exec = require('child_process').exec;
 var terminate = require('../terminate');
 var handlePsTreeCallback = require('../handlePsTreeCallback')
 
+function assign(obj) {
+  for (var i = 1; i < arguments.length; i++) {
+    var vals = arguments[i]
+    if (vals) {
+      for (var key in vals) {
+        obj[key] = vals[key]
+      }
+    }
+  }
+  return obj
+}
+
 test(cyan('kills all processes'), function (t) {
   var parent = exec("node " + require.resolve('./exec/parent.js'), function(error, stdout, stderr) {
     if (error) {
@@ -69,7 +81,7 @@ test(cyan('works with custom pollInterval'), function (t) {
 test(cyan('works when process takes awhile to exit'), function (t) {
   var parent = exec(
     "node " + require.resolve('./exec/parent.js'),
-    {env: {KILL_DELAY: '1000'}},
+    {env: assign({}, process.env, {KILL_DELAY: '1000'})},
     function(error, stdout, stderr) {
       if (error) {
         console.log('exec error: ' + error);
@@ -102,7 +114,7 @@ test(cyan('works when process takes awhile to exit'), function (t) {
 test(cyan('errors when process takes too long to exit'), function (t) {
   var parent = exec(
     "node " + require.resolve('./exec/parent.js'),
-    {env: {KILL_DELAY: '2000'}},
+    {env: assign({}, process.env, {KILL_DELAY: '5000'})},
     function(error, stdout, stderr) {
       if (error) {
         console.log('exec error: ' + error);
