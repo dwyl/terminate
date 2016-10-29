@@ -34,7 +34,7 @@ test(cyan('Spawn a Parent process which has a few Child Processes'), function (t
           t.equal(children.length, 0, green("✓ No more active child processes (we killed them)"));
           t.end();
         })
-      },200); // give psTree time to kill the processes
+      },1000); // give psTree time to kill the processes
     },10); // give the child process time to spawn
   },200); // give the child process time to spawn
 });
