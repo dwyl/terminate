@@ -5,7 +5,7 @@
   "main": "terminate.js",
   "scripts": {
     "test": "istanbul cover --report lcov --report text ./node_modules/tape/bin/tape ./test/*.js",
-    "coverage": "istanbul cover --report lcov --report text ./node_modules/tape/bin/tape ./test/*.js && istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+    "coverage": "npm test && istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
     "jshint": "./node_modules/jshint/bin/jshint -c .jshintrc --exclude-path .gitignore ."
   },
   "repository": {
