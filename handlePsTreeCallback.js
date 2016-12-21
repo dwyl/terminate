@@ -19,7 +19,5 @@ module.exports = function handlePsTreeCallback(err, children, pid, callback) {
   }
   if(callback && typeof callback === 'function') {
     callback(null, true);
-  } else { // do nothing
-    console.log(children.length + " Processes Terminated!");
   }
 };
