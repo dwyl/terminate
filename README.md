@@ -25,12 +25,12 @@ npm install terminate --save
 
 ```js
 var terminate = require('terminate');
-terminate(process.pid, function(err, done){
-  if(err) { // you will get an error if you did not supply a valid process.pid
+terminate(process.pid, function (err) {
+  if (err) { // you will get an error if you did not supply a valid process.pid
     console.log("Oopsy: " + err); // handle errors in your preferred way.
   }
   else {
-    console.log(done); // do what you do best!
+    console.log('done'); // terminating the Processes succeeded.
   }
 });
 ```
