@@ -27,11 +27,11 @@
   },
   "homepage": "https://github.com/dwyl/terminate",
   "dependencies": {
-    "goodparts": "1.2.1",
     "ps-tree": "^1.1.0"
   },
   "devDependencies": {
     "chalk": "^1.1.1",
+    "goodparts": "1.2.1",
     "istanbul": "^0.4.5",
     "jshint": "^2.9.1",
     "pre-commit": "1.1.2",
