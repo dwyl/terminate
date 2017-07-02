@@ -10,6 +10,7 @@ A minimalist yet *reliable* (tested) way to **Terminate** a **Node.js Process** 
 [![npm version](https://badge.fury.io/js/terminate.svg)](http://badge.fury.io/js/terminate)
 [![Node.js Version](https://img.shields.io/node/v/terminate.svg?style=flat)](http://nodejs.org/download)
 [![Dependency Status](https://david-dm.org/dwyl/terminate.svg)](https://david-dm.org/dwyl/terminate)
+[![JavaScript Style Guide: Good Parts](https://img.shields.io/badge/code%20style-goodparts-brightgreen.svg?style=flat)](https://github.com/dwyl/goodparts "JavaScript The Good Parts")
 
 
 
