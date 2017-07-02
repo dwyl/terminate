@@ -6,7 +6,8 @@
   "scripts": {
     "test": "istanbul cover --report lcov --report text ./node_modules/tape/bin/tape ./test/*.js",
     "coverage": "npm test && istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
-    "jshint": "./node_modules/jshint/bin/jshint -c .jshintrc --exclude-path .gitignore ."
+    "jshint": "./node_modules/jshint/bin/jshint -c .jshintrc --exclude-path .gitignore .",
+    "lint": "node_modules/.bin/goodparts terminate.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   },
   "homepage": "https://github.com/dwyl/terminate",
   "dependencies": {
+    "goodparts": "1.2.1",
     "ps-tree": "^1.1.0"
   },
   "devDependencies": {
