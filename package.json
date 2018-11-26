@@ -1,6 +1,6 @@
 {
   "name": "terminate",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Terminate a Node.js Process based on the Process ID",
   "main": "terminate.js",
   "scripts": {
