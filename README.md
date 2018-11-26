@@ -5,7 +5,6 @@ A minimalist yet *reliable* (tested) way to **Terminate** a **Node.js Process** 
 ![terminate-the-node-process-final](https://cloud.githubusercontent.com/assets/194400/6859420/a3b63f3c-d410-11e4-91bb-ad6b607cc465.png)
 
 [![Build Status](https://travis-ci.org/dwyl/terminate.svg?branch=master)](https://travis-ci.org/dwyl/terminate)
-[![Code Climate](https://codeclimate.com/github/dwyl/terminate/badges/gpa.svg)](https://codeclimate.com/github/dwyl/terminate)
 [![codecov.io](https://codecov.io/github/dwyl/terminate/coverage.svg?branch=master)](https://codecov.io/github/dwyl/terminate?branch=master)
 [![npm version](https://badge.fury.io/js/terminate.svg)](http://badge.fury.io/js/terminate)
 [![Node.js Version](https://img.shields.io/node/v/terminate.svg?style=flat)](http://nodejs.org/download)
