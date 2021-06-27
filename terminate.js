@@ -8,7 +8,7 @@ var handlePsTreeCallback = require('./handlePsTreeCallback');
  * by providing a process pid. It finds all child processes and shuts
  * them down too, so you don't have to worry about lingering processes.
  * @param {int} pid - the Process ID you want to terminate
- * @param {string} [signal=SIGTERM] - the signal to kill the processes
+ * @param {string} [signal=SIGKILL] - the signal to kill the processes
  * with.
  * @param {object} [options={}] - options object
  * @param {number} [options.pollInterval=500] - interval to poll whether pid
