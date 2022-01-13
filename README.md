@@ -39,7 +39,7 @@ terminate(process.pid, function (err) {
 
 #### Usage
 
-You can see all the available parameters and their description [here](./index.d.ts#L71).
+All the available parameters and their descriptions are viewable in the TypeScript definition file: [**`index.d.ts`**](./index.d.ts#L71).
 
 <br />
 
