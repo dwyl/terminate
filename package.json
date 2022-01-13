@@ -3,6 +3,12 @@
   "version": "2.2.2",
   "description": "Terminate a Node.js Process based on the Process ID",
   "main": "terminate.js",
+  "files": [
+    "test/**",
+    "*.js",
+    "*.ts",
+    "*.json"
+  ],
   "scripts": {
     "test": "istanbul cover --report lcov --report text ./node_modules/tape/bin/tape ./test/*.js",
     "coverage": "npm test && istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
