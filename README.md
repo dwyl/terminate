@@ -18,13 +18,15 @@ A minimalist yet *reliable* (tested) way to **Terminate** a **Node.js Process** 
 ### Install from NPM
 
 ```sh
+## Using NPM
 npm install terminate --save
 ```
 
 ### In your script
 
 ```js
-var terminate = require('terminate');
+const terminate = require('terminate');
+
 terminate(process.pid, function (err) {
   if (err) { // you will get an error if you did not supply a valid process.pid
     console.log("Oopsy: " + err); // handle errors in your preferred way.
@@ -35,7 +37,11 @@ terminate(process.pid, function (err) {
 });
 ```
 
- <br />
+#### Usage
+
+All the available parameters and their descriptions are viewable in the TypeScript definition file: [**`index.d.ts`**](./index.d.ts#L71).
+
+<br />
 
 # tl;dr
 
