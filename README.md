@@ -29,10 +29,11 @@ const terminate = require('terminate');
 
 terminate(process.pid, function (err) {
   if (err) { // you will get an error if you did not supply a valid process.pid
-    console.log("Oopsy: " + err); // handle errors in your preferred way.
+    console.log('Oopsy:', err); // handle errors in your preferred way.
   }
   else {
     console.log('done'); // terminating the Processes succeeded.
+    // NOTE: The above won't be run in this example as the process itself will be killed before.
   }
 });
 ```
@@ -40,6 +41,23 @@ terminate(process.pid, function (err) {
 #### Usage
 
 All the available parameters and their descriptions are viewable in the TypeScript definition file: [**`index.d.ts`**](./index.d.ts#L71).
+
+#### Promise API
+
+If you are **using Node.js 8+**, you can load the Promise version importing the module `terminate/promise.js` like this:
+
+```js
+const terminate = require('terminate/promise');
+
+(async () => {
+  try {
+    await terminate(process.pid);
+    console.log('done');
+  } catch (err) {
+    console.log('Oopsy:', err);
+  }
+})();
+```
 
 <br />
 
