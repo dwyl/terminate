@@ -23,8 +23,7 @@ test_script:
   - npm --version
   # run tests
   - npm test
-  - node_modules/.bin/istanbul check-coverage --statements 80 --functions 100 --lines 80 --branches 80
+  - node_modules/.bin/nyc check-coverage
 
 # Don't actually build.
 build: off
-

@@ -11,8 +11,9 @@
     "*.json"
   ],
   "scripts": {
-    "test": "istanbul cover --report lcov --report text ./node_modules/tape/bin/tape ./test/*.js",
-    "coverage": "npm test && istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+    "test": "nyc --report=lcov --report=text ./node_modules/tape/bin/tape ./test/*.js",
+    "precoverage": "npm test",
+    "coverage": "nyc check-coverage",
     "jshint": "./node_modules/jshint/bin/jshint -c .jshintrc --exclude-path .gitignore .",
     "lint": "node_modules/.bin/goodparts terminate.js"
   },
@@ -39,8 +40,8 @@
   "devDependencies": {
     "chalk": "^1.1.1",
     "goodparts": "1.2.1",
-    "istanbul": "^0.4.5",
     "jshint": "^2.9.6",
+    "nyc": "^15.1.0",
     "pre-commit": "1.1.2",
     "tape": "^4.4.0"
   },
