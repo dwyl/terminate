@@ -52,7 +52,7 @@ declare module 'terminate' {
    * @param pid - the Process ID you want to terminate.
    * @param signal - the signal to kill the processes with. Defaults to `"SIGKILL"`
    * if it's empty or not defined.
-   * @param opts - options to object.
+   * @param opts - options object.
    */
   export default function terminate(pid: number, signal: string, opts: TerminateOptions): void;
 
@@ -64,7 +64,7 @@ declare module 'terminate' {
    * @param pid - the Process ID you want to terminate.
    * @param signal - the signal to kill the processes with. Defaults to `"SIGKILL"`
    * if it's empty or not defined.
-   * @param opts - options to object.
+   * @param opts - options object.
    * @param callback - if you want to know once the procesess have been terminated,
    * supply a callback.
    */
@@ -90,7 +90,7 @@ declare module 'terminate' {
    * @param pid - the Process ID you want to terminate.
    * @param signal - the signal to kill the processes with. Defaults to `"SIGKILL"`
    * if it's empty or not defined.
-   * @param opts - options to object.
+   * @param opts - options object.
    * @param callback - if you want to know once the procesess have been terminated,
    * supply a callback.
    */
@@ -102,7 +102,7 @@ declare module 'terminate' {
    * them down too, so you don't have to worry about lingering processes.
    *
    * @param pid - the Process ID you want to terminate.
-   * @param opts - options to object.
+   * @param opts - options object.
    */
   export default function terminate(pid: number, opts: TerminateOptions): void;
 
