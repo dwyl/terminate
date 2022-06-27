@@ -6,8 +6,8 @@ A minimalist yet *reliable* (tested) way to **Terminate** a **Node.js Process** 
 
 [![Build Status](https://travis-ci.org/dwyl/terminate.svg?branch=master)](https://travis-ci.org/dwyl/terminate)
 [![codecov.io](https://codecov.io/github/dwyl/terminate/coverage.svg?branch=master)](https://codecov.io/github/dwyl/terminate?branch=master)
-[![npm version](https://badge.fury.io/js/terminate.svg)](http://badge.fury.io/js/terminate)
-[![Node.js Version](https://img.shields.io/node/v/terminate.svg?style=flat)](http://nodejs.org/download)
+[![npm version](https://badge.fury.io/js/terminate.svg)](https://badge.fury.io/js/terminate)
+[![Node.js Version](https://img.shields.io/node/v/terminate.svg?style=flat)](https://nodejs.org/download)
 [![Dependency Status](https://david-dm.org/dwyl/terminate.svg)](https://david-dm.org/dwyl/terminate)
 [![JavaScript Style Guide: Good Parts](https://img.shields.io/badge/code%20style-goodparts-brightgreen.svg?style=flat)](https://github.com/dwyl/goodparts "JavaScript The Good Parts")
 
@@ -76,14 +76,14 @@ were **Terminate**d before attempting to re-start.
 
 Imagine you are running your Node.js app on a Multi-Core Processor
 and don't want to "waste" the CPU by only using *one* of those cores  
-(remember: one of Node's *selling points* is that its [single-process running on a single-core](http://stackoverflow.com/questions/17959663/)),
+(remember: one of Node's *selling points* is that its [single-process running on a single-core](https://stackoverflow.com/questions/17959663/)),
 you can "farm out" tasks to the other cores using [**Child Process**](https://nodejs.org/api/child_process.html)(es)
 
 If you then want to restart your app you *naively* (we did this!)
 terminate the "main" process and *expect* all the "child" processes to
 be ended too.
 
-Sadly this results in [***Zombie Processes***](http://stackoverflow.com/questions/27381163)
+Sadly this results in [***Zombie Processes***](https://stackoverflow.com/questions/27381163)
 which you would have to either *manually* kill or restart the machine/VM to clear.  
 Instead you need to *find* all the Process IDs for the child processes
 that your app created and **terminate** those *before* you can re-start your app.
@@ -92,7 +92,7 @@ Using ***terminate*** you no longer have this problem.
 
 <br />
 
-## Dependencies [![Dependency Status](https://david-dm.org/dwyl/terminate.svg)](https://david-dm.org/dwyl/terminate) [![devDependency Status](https://david-dm.org/dwyl/terminate/dev-status.svg)](https://david-dm.org/dwyl/terminate#info=devDependencies) [![Retire Status](https://img.shields.io/badge/security-no%20known%20vulnerabilities-brightgreen.svg)](http://retire.insecurity.today/api/image?uri=https://raw.githubusercontent.com/dwyl/terminate/master/package.json)
+## Dependencies [![Dependency Status](https://david-dm.org/dwyl/terminate.svg)](https://david-dm.org/dwyl/terminate) [![devDependency Status](https://david-dm.org/dwyl/terminate/dev-status.svg)](https://david-dm.org/dwyl/terminate#info=devDependencies) [![Retire Status](https://img.shields.io/badge/security-no%20known%20vulnerabilities-brightgreen.svg)](https://retire.insecurity.today/api/image?uri=https://raw.githubusercontent.com/dwyl/terminate/master/package.json)
 
 While researching how to get a list of child processes given a
 Process ID we found **ps-tree**: https://github.com/indexzero/ps-tree  
@@ -162,6 +162,6 @@ if you have a *better suggestion*, please share!
 <br />
 ## This Project Reminded me of Two *xkcd* Comics:
 
-![xkcd terminate](http://i.imgur.com/KQ9v7ll.png)
+![xkcd terminate](https://i.imgur.com/KQ9v7ll.png)
 
-![xkcd time robot](http://imgs.xkcd.com/comics/time_robot.png)
+![xkcd time robot](https://imgs.xkcd.com/comics/time_robot.png)
