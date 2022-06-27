@@ -135,13 +135,13 @@ https://github.com/joyent/node/issues/4590
 
 ### Useful StackOverflow Questions/Answers
 
-+ http://stackoverflow.com/questions/27381163/spawning-node-js-child-processes-results-in-zombie-processes-on-cloud-foundry-s
-+ http://stackoverflow.com/questions/26694100/why-does-my-node-app-process-keep-getting-stopped-when-i-use-forever
-+ http://stackoverflow.com/questions/18275809/kill-all-child-process-when-node-process-is-killed
-+ http://stackoverflow.com/questions/26004519/why-doesnt-my-node-js-process-terminate-once-all-listeners-have-been-removed
-+ http://stackoverflow.com/questions/14319724/nodejs-exec-command-failing-with-no-useful-error-message
-+ http://stackoverflow.com/questions/9275654/how-many-child-processes-can-a-node-js-cluster-spawn-on-a-64bit-wintel-pc
-+ http://stackoverflow.com/questions/17959663/why-is-node-js-single-threaded
++ [spawning node.js child processes results in zombie processes on cloud foundry](https://stackoverflow.com/questions/27381163)
++ [Why does my node app process keep getting stopped when I use forever?](https://stackoverflow.com/questions/26694100)
++ [kill all child_process when node process is killed](https://stackoverflow.com/questions/18275809)
++ [Why doesn't my Node.js process terminate once all listeners have been removed?](https://stackoverflow.com/questions/26004519)
++ [nodejs exec command failing with no useful error message](https://stackoverflow.com/questions/14319724)
++ [How many child processes can a node.js cluster spawn on a 64bit Wintel PC?](https://stackoverflow.com/questions/9275654)
++ [Why is Node.js single threaded?](https://stackoverflow.com/questions/17959663)
 
 
 Other potential modules we could have used:
