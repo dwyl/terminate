@@ -1,7 +1,7 @@
 var test  = require('tape');
 var chalk = require('chalk');
 var red = chalk.red, green = chalk.green, cyan = chalk.cyan;
-var psTree = require('ps-tree');  // see: http://git.io/jBHZ
+var psTree = require('ps-tree');  // see: https://git.io/jBHZ
 var exec = require('child_process').exec;
 
 var terminate = require('../terminate');
