@@ -1,6 +1,6 @@
 'use strict';
 
-var psTree = require('ps-tree'); // see: http://git.io/jBHZ
+var psTree = require('ps-tree'); // see: https://git.io/jBHZ
 var handlePsTreeCallback = require('./handlePsTreeCallback');
 
 /**
