@@ -1,0 +1,55 @@
+{
+  "name": "terminate",
+  "version": "2.5.0",
+  "description": "Terminate a Node.js Process based on the Process ID",
+  "main": "terminate.js",
+  "types": "index.d.ts",
+  "files": [
+    "test/**",
+    "*.js",
+    "*.ts",
+    "*.json"
+  ],
+  "scripts": {
+    "test": "nyc --report=lcov --report=text ./node_modules/tape/bin/tape ./test/*.js",
+    "precoverage": "npm test",
+    "coverage": "nyc check-coverage",
+    "jshint": "./node_modules/jshint/bin/jshint -c .jshintrc --exclude-path .gitignore .",
+    "lint": "node_modules/.bin/goodparts terminate.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dwyl/terminate.git"
+  },
+  "keywords": [
+    "Terminate",
+    "Kill",
+    "Node",
+    "Child",
+    "Process"
+  ],
+  "author": "@nelsonic <contact.nelsonic@gmail.com> (https://github.com/nelsonic)",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/dwyl/terminate/issues"
+  },
+  "homepage": "https://github.com/dwyl/terminate",
+  "dependencies": {
+    "ps-tree": "^1.2.0"
+  },
+  "devDependencies": {
+    "chalk": "^1.1.1",
+    "goodparts": "1.2.1",
+    "jshint": "^2.9.6",
+    "nyc": "^15.1.0",
+    "pre-commit": "1.1.2",
+    "tape": "^4.4.0"
+  },
+  "pre-commit": [
+    "jshint",
+    "coverage"
+  ],
+  "engines": {
+    "node": ">=0.10"
+  }
+}
