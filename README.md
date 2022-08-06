@@ -42,6 +42,20 @@ terminate(process.pid, function (err) {
 
 All the available parameters and their descriptions are viewable in the TypeScript definition file: [**`index.d.ts`**](./index.d.ts#L71).
 
+```ts
+// Function signature
+terminate(pid: number, signal?: string, opts?: TerminateOptions, callback?: DoneCallback): void
+
+// Function signature of the Promise version
+terminate(pid: number, signal?: string, opts?: TerminateOptions): Promise<void>
+```
+
+- `pid` - The Process ID you want to terminate.
+- `signal` - The signal to kill the processes with. Defaults to `"SIGKILL"` if it's empty or not defined.
+- `opts.pollInterval` - Interval to poll whether `pid` and all of the childs pids have been killed. Defaults to `500` (0.5s).
+- `opts.timeout` - Max time (in milliseconds) to wait for process to exit before timing out and calling back with an error. Defaults to `5000` (5s).
+- `callback` - The callback function to call when the termination is done. It has this signature: `(error: Error | null): void` whereas `error` will be `null` if the operation succeeds.
+
 #### Promise API
 
 If you are **using Node.js 8+**, you can load the Promise version importing the module `terminate/promise.js` like this:
