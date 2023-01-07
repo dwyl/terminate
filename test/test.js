@@ -229,3 +229,4 @@ test(cyan('handles errors from psTree without callback'), function (t) {
   handlePsTreeCallback(error, undefined, 1);
   setTimeout(function () { t.end(); }, 500);
 });
+

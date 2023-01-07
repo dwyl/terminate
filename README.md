@@ -1,24 +1,26 @@
-# terminate
+<div align="center">
 
-A minimalist yet *reliable* (tested) way to **Terminate** a **Node.js Process** (and ***all Child Processes***) based on the **Process ID**
+# `terminate`
+
+A minimalist yet *reliable* way to **Terminate** a **`Node.js Process`** (and ***all Child Processes***) by **Process ID**.
 
 ![terminate-the-node-process-final](https://cloud.githubusercontent.com/assets/194400/6859420/a3b63f3c-d410-11e4-91bb-ad6b607cc465.png)
 
-[![Build Status](https://travis-ci.org/dwyl/terminate.svg?branch=master)](https://travis-ci.org/dwyl/terminate)
-[![codecov.io](https://codecov.io/github/dwyl/terminate/coverage.svg?branch=master)](https://codecov.io/github/dwyl/terminate?branch=master)
-[![npm version](https://badge.fury.io/js/terminate.svg)](https://badge.fury.io/js/terminate)
-[![Node.js Version](https://img.shields.io/node/v/terminate.svg?style=flat)](https://nodejs.org/download)
-[![Dependency Status](https://david-dm.org/dwyl/terminate.svg)](https://david-dm.org/dwyl/terminate)
-[![JavaScript Style Guide: Good Parts](https://img.shields.io/badge/code%20style-goodparts-brightgreen.svg?style=flat)](https://github.com/dwyl/goodparts "JavaScript The Good Parts")
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/dwyl/terminate/ci.yml?label=build&style=flat-square&branch=main)
+[![codecov.io](https://img.shields.io/codecov/c/github/dwyl/terminate/main.svg?style=flat-square)](http://codecov.io/github/dwyl/terminate?branch=main)
+[![npm version](https://badge.fury.io/js/terminate.svg?style=flat-square)](https://badge.fury.io/js/terminate)
+[![Node.js Version](https://img.shields.io/node/v/terminate.svg?style=flat-square)](https://nodejs.org/download)
+[![JavaScript Style Guide: Good Parts](https://img.shields.io/badge/code%20style-goodparts-brightgreen.svg?style=flat-square)](https://github.com/dwyl/goodparts "JavaScript The Good Parts")
+[![HitCount](http://hits.dwyl.com/dwyl/terminate.svg)](http://hits.dwyl.com/dwyl/terminate)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](https://github.com/dwyl/hapi-auth-jwt2/issues)
 
-
+</div>
 
 ## Usage
 
 ### Install from NPM
 
 ```sh
-## Using NPM
 npm install terminate --save
 ```
 
@@ -38,7 +40,7 @@ terminate(process.pid, function (err) {
 });
 ```
 
-#### Usage
+### Usage
 
 All the available parameters and their descriptions are viewable in the TypeScript definition file: [**`index.d.ts`**](./index.d.ts#L71).
 
@@ -56,7 +58,7 @@ terminate(pid: number, signal?: string, opts?: TerminateOptions): Promise<void>
 - `opts.timeout` - Max time (in milliseconds) to wait for process to exit before timing out and calling back with an error. Defaults to `5000` (5s).
 - `callback` - The callback function to call when the termination is done. It has this signature: `(error: Error | null): void` whereas `error` will be `null` if the operation succeeds.
 
-#### Promise API
+### Promise API
 
 If you are **using Node.js 8+**, you can load the Promise version importing the module `terminate/promise.js` like this:
 
@@ -106,7 +108,7 @@ Using ***terminate*** you no longer have this problem.
 
 <br />
 
-## Dependencies [![Dependency Status](https://david-dm.org/dwyl/terminate.svg)](https://david-dm.org/dwyl/terminate) [![devDependency Status](https://david-dm.org/dwyl/terminate/dev-status.svg)](https://david-dm.org/dwyl/terminate#info=devDependencies) [![Retire Status](https://img.shields.io/badge/security-no%20known%20vulnerabilities-brightgreen.svg)](https://retire.insecurity.today/api/image?uri=https://raw.githubusercontent.com/dwyl/terminate/master/package.json)
+## Dependencies [![Retire Status](https://img.shields.io/badge/security-no%20known%20vulnerabilities-brightgreen.svg?style=flat-square)](https://retire.insecurity.today/api/image?uri=https://raw.githubusercontent.com/dwyl/terminate/main/package.json)
 
 While researching how to get a list of child processes given a
 Process ID we found **ps-tree**: https://github.com/indexzero/ps-tree  
@@ -174,6 +176,7 @@ if you have a *better suggestion*, please share!
 
 <br />
 <br />
+
 ## This Project Reminded me of Two *xkcd* Comics:
 
 ![xkcd terminate](https://i.imgur.com/KQ9v7ll.png)
