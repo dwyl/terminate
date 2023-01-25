@@ -1,6 +1,6 @@
 {
   "name": "terminate",
-  "version": "2.6.0",
+  "version": "2.6.1",
   "description": "Terminate a Node.js Process based on the Process ID",
   "main": "terminate.js",
   "types": "index.d.ts",
@@ -50,6 +50,6 @@
     "coverage"
   ],
   "engines": {
-    "node": ">=0.10"
+    "node": ">=12"
   }
 }

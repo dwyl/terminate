@@ -5,6 +5,7 @@ var psTree = require('ps-tree');  // see: https://git.io/jBHZ
 var exec = require('child_process').exec;
 
 var terminate = require('../terminate');
+var terminate_promise = require('../promise');
 var handlePsTreeCallback = require('../handlePsTreeCallback')
 
 function assign(obj) {
@@ -229,3 +230,4 @@ test(cyan('handles errors from psTree without callback'), function (t) {
   handlePsTreeCallback(error, undefined, 1);
   setTimeout(function () { t.end(); }, 500);
 });
+
