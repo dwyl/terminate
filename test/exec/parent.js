@@ -1,6 +1,6 @@
 var cp = require('child_process');
-var chalk = require('chalk');
-var red = chalk.red, green = chalk.green, cyan = chalk.cyan;
+var clc = require("cli-color");
+var red = clc.redBright, green = clc.greenBright, cyan = clc.cyanBright;
 var count = 0;
 function child() {
   return cp.exec("node ./test/exec/child.js", function(error, stdout, stderr) {
