@@ -1,6 +1,6 @@
 var test  = require('tape');
-var chalk = require('chalk');
-var red = chalk.red, green = chalk.green, cyan = chalk.cyan;
+var clc = require("cli-color");
+var red = clc.redBright, green = clc.greenBright, cyan = clc.cyanBright;
 var psTree = require('ps-tree');  // see: https://git.io/jBHZ
 var exec = require('child_process').exec;
 
