@@ -21,6 +21,7 @@ function assign(obj) {
 }
 
 test(cyan('kills all processes'), function (t) {
+  t.plan(3);
   var parent = exec("node " + require.resolve('./exec/parent.js'), function(error, stdout, stderr) {
     if (error) {
       // this happens even during successful testing because the parent gets SIGKILLed
@@ -42,7 +43,6 @@ test(cyan('kills all processes'), function (t) {
           psTree(parent.pid, function (err, children) {
             // console.log("Children: ", children, '\n');
             t.equal(children.length, 0, green("✓ No more active child processes (we killed them)"));
-            t.end();
           })
         }, 200); // give psTree time to kill the processes
       }, 10); // give the child process time to spawn
@@ -51,6 +51,7 @@ test(cyan('kills all processes'), function (t) {
 });
 
 test(cyan('works with custom pollInterval'), function (t) {
+  t.plan(3);
   var parent = exec("node " + require.resolve('./exec/parent.js'), function(error, stdout, stderr) {
     if (error) {
       console.log('exec error: ' + error);
@@ -71,7 +72,7 @@ test(cyan('works with custom pollInterval'), function (t) {
           psTree(parent.pid, function (err, children) {
             // console.log("Children: ", children, '\n');
             t.equal(children.length, 0, green("✓ No more active child processes (we killed them)"));
-            t.end();
+            // t.end();
           })
         }, 200); // give psTree time to kill the processes
       }, 10); // give the child process time to spawn
@@ -80,6 +81,7 @@ test(cyan('works with custom pollInterval'), function (t) {
 });
 
 test(cyan('works when process takes awhile to exit'), function (t) {
+  t.plan(3);
   var parent = exec(
     "node " + require.resolve('./exec/parent.js'),
     {env: assign({}, process.env, {KILL_DELAY: '1000'})},
@@ -104,7 +106,6 @@ test(cyan('works when process takes awhile to exit'), function (t) {
           psTree(parent.pid, function (err, children) {
             // console.log("Children: ", children, '\n');
             t.equal(children.length, 0, green("✓ No more active child processes (we killed them)"));
-            t.end();
           })
         }, 1500); // give psTree time to kill the processes
       }, 10); // give the child process time to spawn
@@ -141,6 +142,7 @@ if (process.platform !== 'win32') {
   });
 
   test(cyan('sends signal user passed'), function (t) {
+    t.plan(4);
     var parent = exec("node " + require.resolve('./exec/parent.js'), function (error, stdout, stderr) {
       t.assert(/^parent got SIGINT$/m.test(stdout), green("✓ parent reported getting SIGINT"));
       if (error) {
@@ -161,7 +163,6 @@ if (process.platform !== 'win32') {
             psTree(parent.pid, function (err, children) {
               // console.log("Children: ", children, '\n');
               t.equal(children.length, 0, green("✓ No more active child processes (we killed them)"));
-              t.end();
             })
           }, 200); // give psTree time to kill the processes
         }, 10); // give the child process time to spawn
@@ -182,6 +183,7 @@ test(cyan('Attempt to terminate without providing a Parent Process ID'), functio
 });
 
 test(cyan('Terminate a process without providing a callback'), function (t) {
+  t.plan(1);
   var child = exec("node " + require.resolve('./exec/parent.js'), function(error, stdout, stderr) { });
   setTimeout(function(){
     terminate(child.pid);
@@ -191,7 +193,6 @@ test(cyan('Terminate a process without providing a callback'), function (t) {
           console.log(err);
         }
         t.equal(children.length, 0, green("✓ No more active child processes"));
-        t.end();
       });
     },1000); // give psTree time to kill the processes
   },200); // give the child process time to spawn
