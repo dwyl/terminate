@@ -10,6 +10,16 @@
     "*.ts",
     "*.json"
   ],
+  "exports": {
+    "./": {
+      "types": "./index.d.ts",
+      "default": "./terminate.js"
+    },
+    "./promise": {
+      "types": "./promise.d.ts",
+      "default": "./promise.js"
+    }
+  },
   "scripts": {
     "test": "nyc --report=lcov --report=text ./node_modules/tape/bin/tape ./test/*.js",
     "precoverage": "npm test",
