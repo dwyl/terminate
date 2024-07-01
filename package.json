@@ -11,7 +11,7 @@
     "*.json"
   ],
   "exports": {
-    "./": {
+    ".": {
       "types": "./index.d.ts",
       "default": "./terminate.js"
     },
