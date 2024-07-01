@@ -162,10 +162,9 @@ https://github.com/joyent/node/issues/4590
 
 Other potential modules we could have used:
 
-+ **node-ps**: https://github.com/neekey/ps (has basic tests but no coverage / unmaintained?)
-+ **tree-kill**: https://www.npmjs.com/package/tree-kill (no tests!!)
-+ **nexpect**: https://github.com/nodejitsu/nexpect (spawn and control child processes
-  looks really good, but we wanted *less abstraction*)
++ [**node-ps**](https://github.com/neekey/ps): has basic tests but no coverage; seems unmaintained
++ [**tree-kill**](https://www.npmjs.com/package/tree-kill): no tests!! seems unmaintained
++ [**nexpect**](https://github.com/nodejitsu/nexpect): spawn and control child processes looks really good, but we wanted *less abstraction*
 
 
 ### Name
